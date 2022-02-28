@@ -17,10 +17,7 @@ export function defineAsyncLazyComponent({
 
     loader: () => {
       return new Promise((resolve) => {
-        resolveLoader = () =>
-          setTimeout(() => {
-            resolve(loader());
-          }, 2000);
+        resolveLoader = () => resolve(loader());
       });
     },
 
